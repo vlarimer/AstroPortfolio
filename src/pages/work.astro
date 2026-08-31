@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro'
+import  GalleryCard  from '../components/GalleryCard.astro';
+
+import { getCollection } from 'astro:content';
+
+const work = await getCollection('work');
+---
+
+<style>
+
+
+    .gallery-body {
+  max-width: none;
+  display: grid;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
+  overflow: hidden;
+  grid-template-columns: 15% 75% 10%;
+  grid-template-rows: 100%;
+  width: 100%;
+  padding: clamp(16px, 2vh, 32px) clamp(16px, 2vw, 40px);
+  position: relative;
+    }
+
+
+    .gallery-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border-right: 1px solid #94918f;
+}
+
+.gallery-container {
+  margin: 5px;
+  width: 25vw;
+}
+
+</style>
+
+<BaseLayout>
+<div class="gallery-body">
+<Nav />
+<div class="gallery-content">
+
+
+
+{work.map((entry) => (
+<div class="gallery-container">
+
+<GalleryCard project={entry.data.project} title={entry.data.title} theme={entry.data.theme} color={entry.data.color} />
+
+</div>
+))}
+
+
+
+
+</div>
+</div>
+</BaseLayout>
