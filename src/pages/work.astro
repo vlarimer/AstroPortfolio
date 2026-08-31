@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro'
-import  GalleryCard  from '../components/GalleryCard.astro';
+import  GalleryCard2  from '../components/GalleryCard2.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -14,10 +14,9 @@ const work = await getCollection('work');
     .gallery-body {
   max-width: none;
   display: grid;
-  height: 100vh;
-  height: 100dvh;
+  height: 100%;
   max-height: none;
-  overflow: hidden;
+  overflow: show;
   grid-template-columns: 15% 75% 10%;
   grid-template-rows: 100%;
   width: 100%;
@@ -31,6 +30,7 @@ const work = await getCollection('work');
     flex-wrap: wrap;
     justify-content: flex-start;
     border-right: 1px solid #94918f;
+    padding-left: 10vw;
 }
 
 .gallery-container {
@@ -50,7 +50,7 @@ const work = await getCollection('work');
 {work.map((entry) => (
 <div class="gallery-container">
 
-<GalleryCard project={entry.data.project} title={entry.data.title} theme={entry.data.theme} color={entry.data.color} />
+<GalleryCard2 project={entry.data.project} title={entry.data.title} description={entry.data.description} color={entry.data.color} />
 
 </div>
 ))}
