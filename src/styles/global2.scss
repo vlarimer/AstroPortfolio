@@ -200,7 +200,7 @@ body {
   &-article {
     padding: 0 20px;
 
-   
+    
   }
 }
 
@@ -267,7 +267,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 24px;
+    margin-top: auto;
     border-top: 1px solid $border-color;
     padding-top: 14px;
 
@@ -275,6 +275,8 @@ body {
       width: 26px;
       margin-right: 10px;
     }
+
+    
   }
 }
 
@@ -307,25 +309,12 @@ body {
     flex-shrink: 0;
     min-height: 100%;
     scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
   }
 
   .blog-article:not(.header-article) {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    min-height: 0;
-
-    img {
-      flex: 1 1 auto;
-      min-height: 0;
-      height: 30vh;
-      width: 100%;
-      object-fit: cover;
-      display: block;
-      
-    }
   }
 }
 

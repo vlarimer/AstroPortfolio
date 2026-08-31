@@ -1,3 +1,15 @@
- <div class="blog-header-container">
-<slot />
+---
+import  CaseStudyCard  from "./CaseStudyCard.astro";
+
+import { getCollection } from 'astro:content';
+const casestudy = await getCollection('casestudy');
+
+
+---
+
+
+<div class="blog-header-container">
+{casestudy.map((entry) => (
+  <CaseStudyCard project={entry.data.project} title={entry.data.title} caption={entry.data.description} theme={entry.data.theme} color={entry.data.color} />
+))}
  </div>

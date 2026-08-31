@@ -1,0 +1,36 @@
+
+---
+
+import BaseLayout from './BaseLayout.astro'
+import Nav from '../components/Nav.astro'
+
+---
+<style>
+
+    .gallery-body {
+  max-width: none;
+  display: grid;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
+  overflow: hidden;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 100%;
+  width: 100%;
+  padding: clamp(16px, 2vh, 32px) clamp(16px, 2vw, 40px);
+  position: relative;
+    }
+
+</style>
+
+
+<BaseLayout>
+<div class="gallery-body">
+<Nav />
+
+
+<slot />
+
+
+</div>
+</BaseLayout>

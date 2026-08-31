@@ -1,22 +1,12 @@
 ---
 
-
-
+const { project, title, caption } = Astro.props;
 ---
 <style>
 
     .blog-right-container {
         border-width: 1px;
         border-color: #94918f;
-    }
-
-    .portfolio-card {
-        background-image: url('src/assets/recipeDesign/bread-card.png');
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-        padding-bottom: 70%;
-        margin: 5px;
     }
 
     .portfolio-card-info {
@@ -37,6 +27,11 @@
         font-style: italic;
     }
 
+    img {
+        height: 25vh;
+        width: 100%;
+        object-fit: cover;
+    }
 
 </style>
 
@@ -46,11 +41,13 @@
 
     <div class="portfolio-card-info">
 
-    <div class="portfolio-card-title">Recipe Design</div>
-    <div class="portfolio-card-caption">Print & Digital</div>
-
+    <div class="portfolio-card-title">{title}</div>
+    <div class="portfolio-card-caption">{caption}</div>
     </div>
 
+    <div class="portfolio-card-image">
+    <img src=`src/assets/${project}/portfolio-card.png` alt={caption}>
+    </div>
 
 </div>
 </div>

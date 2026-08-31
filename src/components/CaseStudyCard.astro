@@ -1,18 +1,35 @@
 ---
 import DownArrow from "./DownArrow.astro";
+
+const { project, title, caption, theme, color } = Astro.props;
 ---
  
+<!-- <style>
+   img {
+      height: 50%;
+     /* max-height: 22vh; */
+      width: 100%;
+      object-fit: cover;
+      filter: none;
+      padding-bottom: 3vh;
+    }
+    img:hover {
+      filter: none;
+    } 
+
+</style> -->
+
+
 <div class="blog-header">
    <div class="blog-article header-article">
-    <div class="blog-big__title">Brands</div>
-    <div class="blog-menu small-title date">Sinclair Jazz</div>
+    <div class="blog-big__title" style=`color:${color};`>{theme}</div>
+    <div class="blog-menu small-title date">{title}</div>
    </div>
    <div class="blog-article">
-    <img src="src\assets\sinclair\SinclairJazzLogo.png" alt="">
+    <img src=`src/assets/${project}/case-study-card.png` alt={caption}>
     <div class="blog-detail">
-     <span>Brand Identity Design</span>
+     <span>{caption}</span>
     </div>
-    <p></p>
     <a href="#">
   <DownArrow />
      Read More
