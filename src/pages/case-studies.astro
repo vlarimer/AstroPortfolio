@@ -1,0 +1,39 @@
+---
+
+import  GalleryLayout  from "../layouts/GalleryLayout.astro";
+import GalleryCard from "../components/GalleryCard.astro";
+
+import { getCollection } from 'astro:content';
+const casestudy = await getCollection('casestudy');
+
+---
+<style>
+ .gallery-column {
+        border-width: 1px;
+        border-right: 1px solid #94918f;
+
+
+ }
+
+
+
+</style>
+
+
+
+<GalleryLayout>
+
+{casestudy.map((entry) => (
+<div class="gallery-column">
+
+<GalleryCard project={entry.data.project} title={entry.data.title} theme={entry.data.theme} color={entry.data.color} />
+
+</div>
+))}
+
+
+
+
+
+
+</GalleryLayout>

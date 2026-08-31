@@ -1,0 +1,76 @@
+---
+
+const { project, title, theme, color } = Astro.props;
+
+---
+
+
+<style>
+
+
+
+ .gallery-card {
+
+        place-items: center;
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10vh;
+        margin-bottom: auto;
+
+        
+
+
+        padding: 0 3vw;
+
+    }
+
+    .gallery-card-info{
+        padding-bottom: 3vh;
+            
+    }
+
+    .gallery-card-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            padding-bottom:1vh;
+            
+
+    }
+
+    .gallery-card-caption {
+
+        font-size: 1em;
+        font-weight: 300;
+        font-style: italic;
+        padding-bottom: 2vh;
+
+    }
+
+     img {
+
+        height: 30vh;
+        width:100%;
+        object-fit: cover;
+
+    }
+
+
+
+
+</style>
+
+
+<div class="gallery-card" style=`color:${color}`>
+        <div class="gallery-card-info">
+        <div class="gallery-card-title">{theme}</div>
+        <div class="gallery-card-caption">{title}</div>
+        <hr>
+        </div>
+
+        <div class="gallery-card-image">
+            <img src=`/src/assets/${project}/portfolio-card.png` >
+        </div>
+        
+
+    </div>
