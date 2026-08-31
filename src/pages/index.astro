@@ -1,17 +1,23 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Menu from '../components/Menu.astro'
+import CaseStudyCard from '../components/CaseStudyCard.astro'
+import CaseStudyContainer from '../components/CaseStudyContainer.astro'
+import PinnedHeader from '../components/PinnedHeader.astro'
+import Work from '../components/Work.astro'
 ---
+<BaseLayout>
+<div class="blog">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Menu />
+
+<PinnedHeader />
+
+<CaseStudyContainer>
+	<CaseStudyCard />
+</CaseStudyContainer>
+
+<Work />
+
+</div>
+</BaseLayout>
