@@ -15,6 +15,7 @@ const work = defineCollection({
     title: z.string(),
     description: z.string(),
     color: z.string(),
+    type: z.string(),
   }),
 });
 

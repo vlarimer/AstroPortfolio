@@ -1,6 +1,6 @@
 ---
 
-const { project, title, caption } = Astro.props;
+const { project, title, caption, type } = Astro.props;
 ---
 <style>
 
@@ -39,11 +39,14 @@ const { project, title, caption } = Astro.props;
 <div class="blog-right-container">
 <div class="portfolio-card">
 
+    
+    <a href=`/${type}/${project}` style="text-decoration:none;">
     <div class="portfolio-card-info">
 
     <div class="portfolio-card-title">{title}</div>
     <div class="portfolio-card-caption">{caption}</div>
     </div>
+    </a>
 
     <div class="portfolio-card-image">
     <img src=`src/assets/${project}/portfolio-card.png` alt={caption}>

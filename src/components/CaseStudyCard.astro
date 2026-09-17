@@ -19,6 +19,13 @@ const { project, title, caption, theme, color } = Astro.props;
 
 </style> -->
 
+<style define:vars={{ color }}>
+
+   a:hover {
+      color: var(--color);
+   }
+</style>
+
 
 <div class="blog-header">
    <div class="blog-article header-article">
@@ -30,7 +37,7 @@ const { project, title, caption, theme, color } = Astro.props;
     <div class="blog-detail">
      <span>{caption}</span>
     </div>
-    <a href="#">
+    <a href=`/case-studies/${project}`>
   <DownArrow />
      Read More
     </a>

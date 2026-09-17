@@ -1,0 +1,28 @@
+---
+import PortfolioLayout from "../../layouts/PortfolioLayout.astro";
+import Content from "../../components/Content.astro";
+
+const galleryImages = Object.values(
+    import.meta.glob("../../assets/editorial-design/gallery/*.{png,jpg,jpeg,webp}", {
+        eager: true,
+    })
+).map((mod) => (mod as { default: ImageMetadata }).default);
+---
+<style>
+    .gallery-stack {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(8px, 2vh, 24px);
+        height: 100%;
+        overflow-y: auto;
+    }
+</style>
+
+<PortfolioLayout>
+    <div class="gallery-stack">
+        {galleryImages.map((image) => (
+            <Content image={image} alt="Hearth&Harvest tea brand gallery image" />
+        ))}
+    </div>
+</PortfolioLayout>

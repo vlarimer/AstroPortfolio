@@ -31,7 +31,7 @@ const work = await getCollection('work');
   <div class="blog-right">
 
 {work.map((entry) => (
-  <PortfolioCard project={entry.data.project} title={entry.data.title} caption={entry.data.description} />
+  <PortfolioCard project={entry.data.project} title={entry.data.title} caption={entry.data.description} type={entry.data.type} />
 ))}
 
 
